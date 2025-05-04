@@ -1,0 +1,28 @@
+.presentacion{
+    @include flex(column, nowrap, none, center, 2.1875rem);
+    padding: 2.5rem;
+    .video{
+        width: 80%;
+        height: 37.5rem;
+        iframe{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}
+.ideasVision{
+    @include flex(row, nowrap, center, center, 6.25rem);
+    margin-bottom: 6.25rem;
+    .idea, .vision{
+        width: 15.25rem;
+        height: 10.375rem;
+    }
+    .imagenNosotros{
+        width: 17.5rem;
+        height: 10.375rem;
+        img{
+            object-fit: cover;
+        }
+    }
+}

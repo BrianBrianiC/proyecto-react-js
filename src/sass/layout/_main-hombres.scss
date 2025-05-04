@@ -1,0 +1,53 @@
+main .productosPrincipalesHM{
+    @include grid(repeat(4,0.7fr ), repeat(4 , auto), center, none, 5rem .9375rem);
+    grid-template-areas:
+    "producto1 producto2 producto3 producto4"
+    "producto5 producto6 producto7 producto8"
+    "producto9 producto10 producto11 producto12"
+    "verColeccion verColeccion verColeccion verColeccion";
+    margin: 6.25rem .3125rem;
+    .productoPrincipalHM-1{
+        grid-area: producto1;
+    }
+    .productoPrincipalHM-2{
+        grid-area: producto2;
+    }
+    .productoPrincipalHM-3{
+        grid-area: producto3;
+    }
+    .productoPrincipalHM-4{
+        grid-area: producto4;
+    }
+    .productoPrincipalHombre-5{
+        grid-area: producto5;
+    }
+    .productoPrincipalHM-6{
+        grid-area: producto6;
+    }
+    .productoPrincipalHM-7{
+        grid-area: producto7;
+    }
+    .productoPrincipalHM-8{
+        grid-area: producto8;
+    }
+    .productoPrincipalHM-9{
+        grid-area: producto9;
+    }
+    .productoPrincipalHM-10{
+        grid-area: producto10;
+    }
+    .productoPrincipalHM-11{
+        grid-area: producto11;
+    }
+    .productoPrincipalHM-12{
+        grid-area: producto12;
+    }
+}
+main .imagenPrincipalHombre{
+    width: 100%;
+    height: 750px;
+}
+main .imagenPrincipalHombre img{
+    object-fit: cover;
+    object-position: 50% 25%;
+}

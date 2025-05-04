@@ -1,0 +1,22 @@
+@media(max-width: 745px){
+    footer{
+        font-size: map-get($tamaño-letra, tam0);
+        padding: 3.9375rem 1.875rem;
+        section{
+            @include flex(column, nowrap, none, none, .9375rem);
+            ul{
+                @include flex(column, nowrap, none, none, .9375rem);
+                li{
+                    @include flex(row, nowrap, none, center, .3125rem);
+                    .iconoFooter{
+                        width: 1.25rem;
+                        height: 1.25rem;
+                    }
+                }
+            }
+        }
+    }
+    .footerCompraSegura{
+        width: 9.375rem;
+    }
+}

@@ -1,0 +1,23 @@
+.navBar{
+    @include flex(row, nowrap, space-between, center, none);
+    background-color:  #f9f9f9;
+    padding: 0 3.125rem;
+    border-bottom: .0313rem rgba(0, 0, 0, 0.446) solid;
+    .logo{
+        width: 7.5rem;
+        height: 3.625rem;
+    }
+    nav ul{
+        @include flex(row, nowrap, right, none, 1.25rem);
+        font-weight: 300;
+        font-size: map-get($tamaño-letra, tam3 );
+        text-transform: uppercase;
+    }
+    .iconosNavBar{
+        @include flex(row, nowrap, none, none, 1.25rem);
+        li{
+            width: 1.0931rem;
+            height: 1.0931rem;
+        }
+    }
+}
