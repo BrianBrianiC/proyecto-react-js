@@ -7,18 +7,18 @@ import CartWidget from "./CartWidget"
 
 const NavBarComponent = () =>{
     return(
-        <header>
-        <p class="descuentoHeader">
+        <header className="w-full flex flex-col text-center">
+        <p className="text-white bg-black w-full">
             ofertas del 15% de descuento con codigo promocional
         </p>
-        <section class="navBar">
-            <div class="logo">
+        <section className="flex justify-between items-center w-full h-16 bg-amber-50 ">
+            <div className="logo">
                 <a href="#">
                     <img src="./MessinaB.PNG" alt="Logo de mi sitio MESSINA"/>
                 </a>
             </div>
-            <nav>
-                <ul>
+            <nav className="">
+                <ul className="flex justify-between items-center w-2xl">
                     <li>
                         <a href="./pages/hombres.html">
                                 Hombre
@@ -41,7 +41,7 @@ const NavBarComponent = () =>{
                     </li>
                 </ul>
             </nav>
-            <ul class="iconosNavBar">
+            <ul className="iconosNavBar flex justify-between w-3xs">
                 <li>
                     <a href="#">
                         <IoIosSearch/>
