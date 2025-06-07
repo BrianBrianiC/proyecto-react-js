@@ -1,23 +1,21 @@
 
 import NavBarComponent from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-import Prueba from './components/Prueba';
 import Timer from './components/Timer'
 import './App.css'
-
+import {BrowserRouter} from 'react-router-dom';
+import AppRoutes from './routes/AppRoutes';
+import ItemDetailContainer from './components/ItemDetailContainer';
 function App() {
+  //NO SE RECOMIENDA TENER DIV'S O CONTENEDORES CON ESTILOS EN APP
   return (
-    <>
-    <div className='flex flex-col items-center'>
-        <NavBarComponent/>
-        <ItemListContainer greeting="Hola pedrito"/>
-        <div className="rounded-b-full min-h-screen bg-gradient-to-br from-white to-purple-100 flex content-center items-center justify-center w-full">
-          <Prueba/>
-        </div>
-        <Timer/>
-    </div>
-    </>
-  )
+    <BrowserRouter>
+        <NavBarComponent />
+        <AppRoutes/>
+        <Timer />
+        {/* <Footer/> */}
+    </BrowserRouter>
+  );
 }
+
 
 export default App
