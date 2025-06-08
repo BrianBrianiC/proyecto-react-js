@@ -12,9 +12,9 @@ const NavBarComponent = () => {
             </p>
             <section className="flex justify-between items-center w-full h-16 bg-amber-50">
                 <div className="logo">
-                    <a href='#'>
-                        <img src="./MessinaB.PNG" alt="Logo de mi sitio MESSINA" />
-                    </a>
+                    <NavLink to='/'>
+                        <img src="/MessinaB.PNG" alt="Logo de mi sitio MESSINA" />
+                    </NavLink>
                 </div>
                 <nav>
                     <ul className="flex justify-between items-center w-2xl">
