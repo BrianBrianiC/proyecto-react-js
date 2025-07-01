@@ -1,31 +1,45 @@
 import { useEffect, useState } from "react"
-import { getProducts } from "../mock/productos"
 import ItemList from "./ItemList";
 import { useParams } from 'react-router-dom';
+import LoaderComponent from "./LoaderComponent";
+import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../service/firebase";
 
 const ItemListContainer = () =>{
     const [productos,setProductos] = useState([]);
     const {categoryId} = useParams()
+    const [loading,setLoading] = useState(false)
 
-    useEffect(()=>{
-        getProducts()
-        .then(productos => {
-            if(categoryId){
-                setProductos(productos.filter(prod => prod.category === categoryId))
-            }else{
-                setProductos(productos)
-            }
-        })
-        .catch(error => console.error(error))
+        useEffect(()=>{
+                setLoading(true)
+                //conectarnos con nuestra coleccion
+                const productsCollection = categoryId ? query(collection(db, "remeras"), where("category", "==", categoryId)): collection(db, "remeras")
+                //pedir los documentos
+                getDocs(productsCollection)
+                .then((res)=>{
+                    //limpiar los datos para poder utilizar
+                    const list = res.docs.map((doc)=>{
+                        return {
+                            ...doc.data(),
+                            id:doc.id
+                        }
+                    })
 
-    },[categoryId ])
+                    setProductos(list)
+                })
+                .catch((error)=> console.log(error))
+                .finally(()=> setLoading(false))
+        },[categoryId])
 
-    console.log(productos);
-    
     return(
-        <div>
-            <ItemList data= {productos}/>
-        </div>
+        <>  
+            {
+                loading? <LoaderComponent/> :
+                <div>
+                    <ItemList data={productos}/>
+                </div>
+            }
+        </>
     )
 }
 export default ItemListContainer

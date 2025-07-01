@@ -14,7 +14,7 @@ function Item({ data }) {
                         Ver más
                     </button>
                 </Link>
-            </div>
+                </div>
             </div>
 
             <div className="flex flex-col gap-[0.0625rem]">
@@ -26,7 +26,7 @@ function Item({ data }) {
                         $<del>{data.price}</del>
                     </span>
                     <span className="text-[0.875rem] ml-2">
-                        {parseInt(data.price) - 7000}
+                        {parseInt(data.price)}
                     </span>
                 </div>
                 <p className="text-sm">
